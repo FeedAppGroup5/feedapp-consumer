@@ -6,9 +6,9 @@ from datetime import datetime
 
 # Read environment variables
 rabbitmq_host = os.environ.get('RABBITMQ_HOST', 'localhost')
-rabbitmq_port = os.environ.get('RABBITMQ_PORT', 5672)
+rabbitmq_port = int(os.environ.get('RABBITMQ_PORT', 5672))
 mongodb_host = os.environ.get('MONGODB_HOST', 'localhost')
-mongodb_port = os.environ.get('MONGODB_PORT', 27017)
+mongodb_port = int(os.environ.get('MONGODB_PORT', 27017))
 
 # MongoDB setup
 client = MongoClient(mongodb_host, mongodb_port)
